@@ -5,7 +5,7 @@ font pango:monospace 8
 
 floating_modifier $mod
 
-set $term --no-startup-id gnome-terminal #i3-sensible-terminal
+set $term --no-startup-id gnome-terminal 
 bindsym $mod+Return exec $term 
 bindsym $mod+Shift+q kill
 #
