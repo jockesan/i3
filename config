@@ -1,0 +1,303 @@
+set $mod Mod4
+
+
+font pango:monospace 8
+
+floating_modifier $mod
+
+set $term --no-startup-id gnome-terminal #i3-sensible-terminal
+bindsym $mod+Return exec $term 
+bindsym $mod+Shift+q kill
+#
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+odiaeresis focus right
+#
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+#
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+odiaeresis move right
+#
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+#
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+#bindsym $mod+a focus parent
+#bindsym $mod+d focus child
+
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
+ 
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+
+# workspace/output setting @ home
+#workspace 1   output DP-1-2
+#workspace 2   output DP-1-2
+#workspace 3   output DP-1-2
+#workspace 4   output DP-1-2
+#workspace 5   output DP-1-2
+#workspace 6   output DP-1-2
+#workspace 7   output DP-1-2
+#workspace 8   output DP-1-2
+#workspace 9   output DP-1-2
+#workspace 10  output eDP-1
+
+
+# workspace/output setting @ work
+#workspace 1   output DP2
+#workspace 2   output DP-1-2
+#workspace 3   output DP-1-2
+#workspace 4   output DP-1-2
+#workspace 5   output DP-1-2
+#workspace 6   output DP-1-2
+#workspace 7   output DP-1-2
+#workspace 8   output DP-1-3
+#workspace 9   output DP-1-3
+#workspace 10  output DP-1-3
+
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Leave i3?' -b 'take me out of here!, exit i3' 'i3-msg exit'"
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+
+
+set_from_resource $fg i3wm.color7 #81daf5
+set_from_resource $bg i3wm.color2 #0489b1
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+bar {
+        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
+        	tray_output primary
+	        colors {
+                background $bg
+                separator $fg
+                #                  border             background         text
+                focused_workspace  $bg  		$bg  		 $fg
+                inactive_workspace $bg 			$bg  		 $fg
+                urgent_workspace   $bg   		$bg   		 $fg
+        }
+
+}
+
+#exec_always --no-startup-id $HOME/.config/polybar/start_polybar.sh
+hide_edge_borders both
+new_float pixel 1
+
+gaps inner 10
+gaps outer 5
+bindsym $mod+minus gaps inner all minus 5
+bindsym $mod+plus gaps inner all plus 5
+bindsym Shift+$mod+minus gaps outer all minus 5
+bindsym Shift+$mod+plus gaps outer all plus 5 
+
+bindsym $mod+Ctrl+l exec "~/.config/i3/script/xscreen-lock-sh"
+bindsym $mod+u [class="netshell"] scratchpad show, [class="netshell"] move position center
+bindsym $mod+Shift+d [class="dump"] scratchpad show, [class="netshell"] move position center
+bindsym $mod+a [class="home"] scratchpad show, [class="home"] move position center
+bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
+
+bindsym $mod+d exec --no-startup-id "rofi -show run -config /home/jowe01/.config/i3/conf/rofi.conf" 
+bindsym $mod+Tab exec --no-startup-id "rofi -show window -config /home/jowe01/.config/i3/conf/rofi.conf"
+
+bindsym $mod+Shift+w exec /home/jowe01/.config/i3/script/start-work-vm.sh move to $workspace4
+exec --no-startup-id exec /home/jowe01/.config/i3/script/matter.sh  $workspace1
+exec --no-startup-id exec /home/jowe01/.config/i3/script/pidgin.sh  $workspace1
+
+exec --no-startup-id exec ~/.local/bin/work-vpn.sh move to $workspace10
+exec --no-startup-id exec compton --config /home/jowe01/.config/i3/conf/compton.conf 
+exec --no-startup-id /home/jowe01/.config/i3/script/work-display.sh
+exec --no-startup-id nm-applet
+exec --no-startup-id xscreensaver 
+exec --no-startup-id redshift-gtk 
+exec --no-startup-id exec blueman-applet 
+exec --no-startup-id dunst -config /home/jowe01/.config/i3/conf/dunst.conf
+exec --no-startup-id ~/.config/i3/script/set_wallpaper.sh 
+
+
+for_window [class="netshell"] floating enable
+for_window [class="netshell"] resize set 625 425
+for_window [class="netshell"] move scratchpad
+for_window [class="netshell"] border pixel 1
+exec --no-startup-id $term --class=home
+
+for_window [class="home"] floating enable 
+for_window [class="home"] resize set 625 400 
+for_window [class="home"] move scratchpad
+for_Window [class="home"] border pixel 1
+exec --no-startup-id $term --class=home
+
+
+for_window [class="dump"] floating enable
+for_window [class="dump"] resize set 800 500
+for_window [class="dump"] move scratchpad
+for_Window [class="dump"] border pixel 1
+exec --no-startup-id $term --class=dump
+
+
+
+set $mode_mon Monitor Setup (h) Home, (w) Work, (o) On the go, (m) Mirror 
+mode "$mode_mon"{
+	bindsym h exec --no-startup-id ~/.config/i3/script/mon_home.sh, mode "default"
+	bindsym w exec --no-startup-id ~/.config/i3/script/mon_work.sh, mode "default"
+	bindsym o exec --no-startup-id ~/.config/i3/script/mon_hipp.sh, mode "default"
+	bindsym m exec --no-startup-id ~/.config/i3/script/mon_mirror.sh, mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+m mode "$mode_mon"
+
+set $Locker i3lock-wrapper -l && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id  systemctl poweroff -i, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    
+}
+bindsym $mod+Delete mode "$mode_system"
+
+
+popup_during_fullscreen smart
+workspace_auto_back_and_forth yes
+force_display_urgency_hint 500 ms
+
+assign [title="Cisco AnyConnect Secure Mobility Client"] $workspace10
+assign [title="*.* - Com Hem Com Hem Mattermost"] $workspace1
+assign [Class="Pidgin"] $workspace1
+assign [Class="mattermost"] $workspace1
+
+for_window [title="Cisco AnyConnect Secure Mobility Client"] floating enable 
+for_window [Class="sun-awt-X11-XFramePeer"] floating enable 
+for_window [Class="*.*  Cisco Transport Controller"] floating enable
+for_window [title="CTC Downloading"] floating enable 
+for_window [title ="Remmina Remote Desktop Client"] floating enable 
+for_window [title="*.*- LibreOffice Calc"] floating enable 
+for_window [Class="Firefox"] floating enable
+for_window [Class="krusader"] floating enable 
+for_window [title="Oracle VM VirtualBox Manager"] floating enable border pixel 1
+for_window [Class="Gnome-terminal"] border pixel 1
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [title="Hearthstone"] floating enable
+for_window [title="Blizzard App"] floating enable
+for_window [title="Bluetooth Devices"] floating enable
+for_window [class="Spotify"] floating enable 
+for_window [id="0x3000007"] floating enable # nautilus
+
+bindsym Print exec scrot ~/images/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png && notify-send -t 2 "Screenshot taken" -u low
+bindsym Shift+Print exec gnome-screenshot -i -c 
+
+# Audio control
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+
+# let there be light!
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && exec bright-notis.sh
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && exec bright-notis.sh
+
+# Mic control
+bindsym Shift+XF86AudioRaiseVolume exec amixer set Capture 9%+
+bindsym Shift+XF86AudioLowerVolume exec amixer set Capture 9%-
+bindsym XF86AudioMicMute exec amixer set Capture toggle
+
+# touchpad tweaks
+exec --no-startup-id synclient PalmDetect=1 
+bindsym $mod+p exec synclient TouchpadOff=0 && notify-send -t 3 "Touchpad ON!" -u normal
+bindsym Shift+$mod+p exec synclient TouchpadOff=1 && notify-send -t 3 "Touchpad OFF!" -u critical
+
+
+set $mode_move Move workspace (Left arrow) left | (Right arrow) right
+mode "$mode_move"  {
+        bindsym Left move workspace to output left; mode "default"
+        bindsym Right move workspace to output right; mode "default"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+
+}
+bindsym Control+$Mod+M mode "$mode_move"
