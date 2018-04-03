@@ -165,9 +165,9 @@ bindsym Shift+$mod+minus gaps outer all minus 5
 bindsym Shift+$mod+plus gaps outer all plus 5 
 
 bindsym $mod+Ctrl+l exec "~/.config/i3/script/xscreen-lock-sh"
-bindsym $mod+u [class="netshell"] scratchpad show, [class="netshell"] move position center
-bindsym $mod+Shift+d [class="dump"] scratchpad show, [class="netshell"] move position center
-bindsym $mod+a [class="home"] scratchpad show, [class="home"] move position center
+bindsym $mod+u [class="netshell"] scratchpad show 
+bindsym $mod+Shift+d [class="dump"] scratchpad show
+bindsym $mod+a [class="home"] scratchpad show
 bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 
 bindsym $mod+d exec --no-startup-id "rofi -show run -config /home/jowe01/.config/i3/conf/rofi.conf" 
