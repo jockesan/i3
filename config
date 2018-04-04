@@ -1,7 +1,7 @@
 set $mod Mod4
 
 
-font pango:monospace 8
+font pango:monospace 9
 
 floating_modifier $mod
 
@@ -192,7 +192,7 @@ for_window [class="netshell"] floating enable
 for_window [class="netshell"] resize set 625 425
 for_window [class="netshell"] move scratchpad
 for_window [class="netshell"] border pixel 1
-exec --no-startup-id $term --class=home
+exec --no-startup-id $term --class=netshell
 
 for_window [class="home"] floating enable 
 for_window [class="home"] resize set 625 400 
