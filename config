@@ -1,5 +1,7 @@
 set $mod Mod4
 
+exec --no-startup-id ~/.config/i3/script/set_wallpaper.sh 
+
 
 font pango:monospace 9
 
@@ -89,8 +91,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 #workspace 8   output DP-1-2
 #workspace 9   output DP-1-2
 #workspace 10  output eDP-1
-
-
 # workspace/output setting @ work
 #workspace 1   output DP2
 #workspace 2   output DP-1-2
@@ -157,18 +157,17 @@ bar {
 hide_edge_borders both
 new_float pixel 1
 
-gaps inner 10
+gaps inner 5
 gaps outer 5
 bindsym $mod+minus gaps inner all minus 5
 bindsym $mod+plus gaps inner all plus 5
 bindsym Shift+$mod+minus gaps outer all minus 5
 bindsym Shift+$mod+plus gaps outer all plus 5 
 
-bindsym $mod+Ctrl+l exec "~/.config/i3/script/xscreen-lock-sh"
+bindsym $mod+Ctrl+l exec "~/.config/i3/script/xscreen-lock.sh"
 bindsym $mod+u [class="netshell"] scratchpad show 
 bindsym $mod+Shift+d [class="dump"] scratchpad show
 bindsym $mod+a [class="home"] scratchpad show
-bindsym $mod+Shift+u resize shrink height 10 px or 10 ppt
 
 bindsym $mod+d exec --no-startup-id "rofi -show run -config /home/jowe01/.config/i3/conf/rofi.conf" 
 bindsym $mod+Tab exec --no-startup-id "rofi -show window -config /home/jowe01/.config/i3/conf/rofi.conf"
@@ -176,16 +175,14 @@ bindsym $mod+Tab exec --no-startup-id "rofi -show window -config /home/jowe01/.c
 bindsym $mod+Shift+w exec /home/jowe01/.config/i3/script/start-work-vm.sh move to $workspace4
 exec --no-startup-id exec /home/jowe01/.config/i3/script/matter.sh  $workspace1
 exec --no-startup-id exec /home/jowe01/.config/i3/script/pidgin.sh  $workspace1
-
 exec --no-startup-id exec ~/.local/bin/work-vpn.sh move to $workspace10
 exec --no-startup-id exec compton --config /home/jowe01/.config/i3/conf/compton.conf 
 exec --no-startup-id /home/jowe01/.config/i3/script/work-display.sh
 exec --no-startup-id nm-applet
-exec --no-startup-id xscreensaver 
+exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id redshift-gtk 
 exec --no-startup-id exec blueman-applet 
 exec --no-startup-id dunst -config /home/jowe01/.config/i3/conf/dunst.conf
-exec --no-startup-id ~/.config/i3/script/set_wallpaper.sh 
 
 
 for_window [class="netshell"] floating enable
@@ -195,7 +192,7 @@ for_window [class="netshell"] border pixel 1
 exec --no-startup-id $term --class=netshell
 
 for_window [class="home"] floating enable 
-for_window [class="home"] resize set 625 400 
+for_window [class="home"] resize set 600 400 
 for_window [class="home"] move scratchpad
 for_Window [class="home"] border pixel 1
 exec --no-startup-id $term --class=home
@@ -278,8 +275,8 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # let there be light!
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && exec bright-notis.sh
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && exec bright-notis.sh
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && exec ~/.config/i3/script/bright-notis.sh
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && exec ~/.config/i3/script/bright-notis.sh
 
 # Mic control
 bindsym Shift+XF86AudioRaiseVolume exec amixer set Capture 9%+
