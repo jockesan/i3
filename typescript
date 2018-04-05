@@ -1,47 +1,0 @@
-Script started on fre 27 okt 2017 23:39:46
-]0;jocke@jockesan: ~/.config/i3[01;32mjocke@jockesan[00m:[01;34m~/.config/i3[00m$ cd script/
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ ,/lok[Kck.sh
-bash: ,/lock.sh: No such file or directory
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ ls
-[0m[01;32mblurme[0m  [01;32mblurme.org[0m  [01;32mbright-notis.sh[0m  [01;32mconkylock[0m  [01;32mconky-rss.sh[0m  [01;32mi3lock++.sh[0m  [01;32mlockit.sh[0m  [01;32mlock.sh[0m  [01;32mmatter.sh[0m  [01;32mpidgin.sh[0m  start_polybar.sh  [01;32mstart-work-vm.sh[0m  [01;32mwork-display.sh[0m  [01;32mwork-mon-off.sh[0m  [01;32mwork-vpn.sh[0m
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ .(lo[K[K[K/lock.sh 
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ ./lock.sh ls[K,/lock.shcd script/[K[K[K[K[K[K[K[K[K[Kmore loci[Kkit.sh 
-#!/usr/bin/env bash
-
-#icon="/home/jocke/images/lock/danger-zone.jpeg"
-icon="/home/jocke/images/lock/archer.jpg"
-tmpbg='/tmp/screen.png'
-
-(( $# )) && { icon=$1; }
-
-scrot "$tmpbg"
-convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
-convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-i3lock -i "$tmpbg"
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ more lockit.sh [5P./lock[C[C[C[Cls[K,/lock.shcd script/[6Pexitcat .config/i3/script/lockit.sh exit[K./blurme -v &[2Ph[K[K[K[K[K[K[K[K[K[K[Knano lock.sh
-[?1049h[1;36r(B[m[4l[?7h[?1h=[?1h=[?1h=[39;49m[?25l[39;49m(B[m[H[2J[34;128H(B[0;7m[ Reading File ](B[m[34;134H(B[0;7m 7 lines ](B[m[H[39;49m(B[0;7m  GNU nano 2.7.4                                                                                                                    File: lock.sh                                                                                                                              [3;1H(B[micon[32m=(B[0;1m[33m"/home/jocke/images/lock/archer.jpg"[4d[39m(B[mtmpbg[32m=`[39m(B[mmktemp /tmp/lockscreen.XXXXXXXXXX.png[32m`[39m(B[m [32m||[39m(B[m [32mexit[39m(B[m 1[6dscrot (B[0;1m[33m"$tmpbg"[7d[39m(B[mconvert (B[0;1m[33m"$tmpbg"[39m(B[m -blur 0x6  (B[0;1m[33m"$tmpbg"[8d[39m(B[mi3lock -i (B[0;1m[33m"$tmpbg"[9d[34mrm[39m(B[m (B[0;1m[33m"$tmpbg"[35d[39m(B[0;7m^G(B[m Get Help[19G(B[0;7m^O(B[m Write Out[37G(B[0;7m^W(B[m Where Is[55G(B[0;7m^K(B[m Cut Text[73G(B[0;7m^J(B[m Justify[35;91H(B[0;7m^C(B[m Cur Pos[35;109H(B[0;7m^Y(B[m Prev Page[127G(B[0;7mM-\(B[m First Line    (B[0;7mM-W(B[m WhereIs Next  (B[0;7m^^(B[m Mark Text[181G(B[0;7mM-}(B[m Indent Text   (B[0;7mM-U(B[m Undo[35;217H(B[0;7m^B(B[m Back[35;235H(B[0;7m^←(B[m Prev Word[253G(B[0;7m^A(B[m Home[36d(B[0;7m^X(B[m Exit[36;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[36;55H(B[0;7m^U(B[m Uncut Text     (B[0;7m^T(B[m To Linter[91G(B[0;7m^_(B[m Go To Line     (B[0;7m^V(B[m Next Page[127G(B[0;7mM-/(B[m Last Line     (B[0;7mM-](B[m To Bracket    (B[0;7mM-^(B[m Copy Text     (B[0;7mM-{(B[m Unindent Text (B[0;7mM-E(B[m Redo[36;217H(B[0;7m^F(B[m Forward[36;235H(B[0;7m^→(B[m Next Word[253G(B[0;7m^E(B[m End[34d[?12l[?25h[3d[4d[5d[6dscrot [C[C[C[C[C[C[C[C[7dconve[8d[34d[K[7;6Hrt [C[C[C[C[C[C[C[C [1;262H(B[0;7mModified[7;18H(B[m£-blur 0x6  (B[0;1m[33m"$tmpbg"[7;19H[39m(B[mi-blur 0x6  (B[0;1m[33m"$tmpbg"[7;20H[39m(B[m[1P[1P(B[0;1m[31m$-[39m(B[mblur 0x6  (B[0;1m[33m"$tmpbg"[7;19H[39m(B[m(B[0;1m[31mi[39m(B[m-blur 0x6  (B[0;1m[33m"$tmpbg"[7;20H[39m(B[m(B[0;1m[31mc[39m(B[m-blur 0x6  (B[0;1m[33m"$tmpbg"[7;21H[39m(B[m(B[0;1m[31mo[39m(B[m-blur 0x6  (B[0;1m[33m"$tmpbg"[7;22H[39m(B[m(B[0;1m[31mn[39m(B[m-blur 0x6  (B[0;1m[33m"$tmpbg"[7;23H[39m(B[m -blur 0x6  (B[0;1m[33m"$tmpbg"[7;24H[39m(B[m(B[0;1m[33m" -blur 0x6  "[31m$tmpbg[39m(B[m"[7;24H(B[0;1m[33m"$icon"[39m(B[m -blur 0x6  (B[0;1m[33m"$tmpbg"[7;19H[39m(B[m[35;19H            [37G           [55G             (B[0;7mM-D(B[m DOS Format [35;91H          [35;109H            [127G        (B[0;7mM-A(B[m Append[30X[35;181H[21X[35;202H(B[0;7mM-B(B[m Backup File[K[36;2H(B[0;7mC(B[m Cancel[36;19H            [37G          [36;55H             (B[0;7mM-M(B[m Mac Format   [91G[30X[36;127H        (B[0;7mM-P(B[m Prepend[56X[36;202H(B[0;7m^T(B[m To Files[K[34d(B[0;7mFile Name to Write: lock.sh                                                                                                                                                                                                                                                    [34;1H(B[m[34;28H[?25l[34;127H[1K (B[0;7m[ Wrote 7 lines ](B[m[K[1;262H(B[0;7m        [35;19H^O(B[m Write Out[37G(B[0;7m^W(B[m Where Is[55G(B[0;7m^K(B[m Cut Text       (B[0;7m^J(B[m Justify[35;91H(B[0;7m^C(B[m Cur Pos[35;109H(B[0;7m^Y(B[m Prev Page[127G(B[0;7mM-\(B[m First Line    (B[0;7mM-W(B[m WhereIs Next  (B[0;7m^^(B[m Mark Text[181G(B[0;7mM-}(B[m Indent Text   (B[0;7mM-U(B[m Undo          (B[0;7m^B(B[m Back[35;235H(B[0;7m^←(B[m Prev Word[253G(B[0;7m^A(B[m Home[36;2H(B[0;7mX(B[m Exit  [36;19H(B[0;7m^R(B[m Read File[37G(B[0;7m^\(B[m Replace[36;55H(B[0;7m^U(B[m Uncut Text     (B[0;7m^T(B[m To Linter[91G(B[0;7m^_(B[m Go To Line     (B[0;7m^V(B[m Next Page[127G(B[0;7mM-/(B[m Last Line     (B[0;7mM-](B[m To Bracket    (B[0;7mM-^(B[m Copy Text     (B[0;7mM-{(B[m Unindent Text (B[0;7mM-E(B[m Redo          (B[0;7m^F(B[m Forward[36;235H(B[0;7m^→(B[m Next Word[253G(B[0;7m^E(B[m End[34d[?12l[?25h[7;19H[34d[J[36;271H[36;1H[?1049l[?1l>]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ ./o[Klock.sh 
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ more lockit.sh
-#!/usr/bin/env bash
-
-#icon="/home/jocke/images/lock/danger-zone.jpeg"
-icon="/home/jocke/images/lock/archer.jpg"
-tmpbg='/tmp/screen.png'
-
-(( $# )) && { icon=$1; }
-
-scrot "$tmpbg"
-convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
-convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-i3lock -i "$tmpbg"
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ cat loc.[Kk.sh
-icon="/home/jocke/images/lock/archer.jpg"
-tmpbg=`mktemp /tmp/lockscreen.XXXXXXXXXX.png` || exit 1
-
-scrot "$tmpbg"
-convert "$tmpbg" "$icon" -blur 0x6  "$tmpbg"
-i3lock -i "$tmpbg"
-rm "$tmpbg"
-]0;jocke@jockesan: ~/.config/i3/script[01;32mjocke@jockesan[00m:[01;34m~/.config/i3/script[00m$ rx[K[Kexit
-exit
-
-Script done on fre 27 okt 2017 23:42:13
