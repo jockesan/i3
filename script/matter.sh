@@ -1,0 +1,1 @@
+/opt/Mattermost/mattermost-desktop &

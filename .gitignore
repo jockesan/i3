@@ -1,6 +1,7 @@
 .gitignore
 *.log
-/script/
+/script/old
+/script/testing/
 /oldshit/
 *.save
 *.work
