@@ -1,0 +1,10 @@
+#!/bin/bash
+
+VPNC_FILE='/var/run/vpnagentd.pid'
+
+if [[ -e "${VPNC_FILE}" ]]; then
+  echo "on"
+  echo "on"
+  echo ""
+fi
+
