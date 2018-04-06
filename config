@@ -11,6 +11,10 @@ set $term --no-startup-id gnome-terminal
 bindsym $mod+Return exec $term 
 bindsym $mod+Shift+q kill
 #
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+#
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -143,16 +147,16 @@ client.background       $bg
 
 
 bar {
-	#status_command i3blocks -c /~.config/i3/conf/i3blocks.conf
-        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
-        	tray_output primary
+	status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
+        #status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
+                tray_output primary
 	        colors {
                 background $bg
                 separator $fg
                 #                  border             background         text
-                focused_workspace  $bg  		$bg  		 $fg
-                inactive_workspace $bg 			$bg  		 $fg
-                urgent_workspace   $bg   		$bg   		 $fg
+                focused_workspace  $bg                  $bg             $fg
+                inactive_workspace $bg                  $bg             $fg
+                urgent_workspace   $bg                  $bg             $fg
         }
 
 }
