@@ -147,8 +147,8 @@ client.background       $bg
 
 
 bar {
-	#status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
-        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
+	status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
+        #status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
                 tray_output primary
 	        colors {
                 background $bg
