@@ -2,7 +2,6 @@ set $mod Mod4
 
 exec --no-startup-id ~/.config/i3/script/set_wallpaper.sh 
 
-
 font pango:monospace 9
 
 floating_modifier $mod
@@ -128,9 +127,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-
-
+#
 set_from_resource $fg i3wm.color7 #81daf5
 set_from_resource $bg i3wm.color2 #0489b1
 
@@ -143,25 +140,23 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
+exec_always --no-startup-id polybar /home/jowe01/.config/i3/conf/new-poly.conf main
 
+#bar {
+	#status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
+#        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
+#                tray_output primary
+#	        colors {
+#                background $bg
+#                separator $fg
+#                #                  border             background         text
+#                focused_workspace  $bg                  $bg             $fg
+#                inactive_workspace $bg                  $bg             $fg
+#                urgent_workspace   $bg                  $bg             $fg
+#        }
 
+#}
 
-bar {
-	status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
-        #status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
-                tray_output primary
-	        colors {
-                background $bg
-                separator $fg
-                #                  border             background         text
-                focused_workspace  $bg                  $bg             $fg
-                inactive_workspace $bg                  $bg             $fg
-                urgent_workspace   $bg                  $bg             $fg
-        }
-
-}
-
-#exec_always --no-startup-id $HOME/.config/polybar/start_polybar.sh
 hide_edge_borders both
 new_float pixel 1
 
@@ -259,7 +254,6 @@ for_window [title="CTC Downloading"] floating enable
 for_window [title ="Remmina Remote Desktop Client"] floating enable 
 for_window [title="*.*- LibreOffice Calc"] floating enable 
 for_window [Class="Firefox"] floating enable
-for_window [Class="krusader"] floating enable 
 for_window [title="Oracle VM VirtualBox Manager"] floating enable border pixel 1
 for_window [Class="Gnome-terminal"] border pixel 1
 for_window [window_role="pop-up"] floating enable
