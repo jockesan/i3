@@ -1,5 +1,6 @@
 .gitignore
 *.log
+/conf/dump/*
 /script/old
 /script/testing/
 /oldshit/
