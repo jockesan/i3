@@ -1,12 +1,12 @@
 set $mod Mod4
 
-exec --no-startup-id wal -R 
+exec --no-startup-id ~/.local/bin/wal -R 
 
 font pango:monospace 9
 
 floating_modifier $mod
 
-set $term --no-startup-id gnome-terminal 
+set $term --no-startup-id gnome-terminal -- fish
 bindsym $mod+Return exec $term 
 bindsym $mod+Shift+q kill
 #
@@ -140,22 +140,22 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-#exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
+exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
 
-#bar {
+bar {
 	#status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
-#        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
-#                tray_output primary
-#	        colors {
-#                background $bg
-#                separator $fg
-#                #                  border             background         text
-#                focused_workspace  $bg                  $bg             $fg
-#                inactive_workspace $bg                  $bg             $fg
-#                urgent_workspace   $bg                  $bg             $fg
-#        }
+        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
+                tray_output primary
+	        colors {
+                background $bg
+                separator $fg
+                #                  border             background         text
+                focused_workspace  $bg                  $bg             $fg
+                inactive_workspace $bg                  $bg             $fg
+                urgent_workspace   $bg                  $bg             $fg
+        }
 
-#}
+}
 
 hide_edge_borders both
 new_float pixel 1
@@ -198,14 +198,14 @@ for_window [class="home"] floating enable
 for_window [class="home"] resize set 600 400 
 for_window [class="home"] move scratchpad
 for_Window [class="home"] border pixel 1
-exec --no-startup-id $term --class=home
+exec --no-startup-id $term --class=home 
 
 
 for_window [class="dump"] floating enable
 for_window [class="dump"] resize set 800 500
 for_window [class="dump"] move scratchpad
 for_Window [class="dump"] border pixel 1
-exec --no-startup-id $term --class=dump
+exec --no-startup-id $term --class=dump --tmux 
 
 
 
@@ -243,9 +243,8 @@ workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
 
 assign [title="Cisco AnyConnect Secure Mobility Client"] $workspace10
-assign [title="*.* - Com Hem Com Hem Mattermost"] $workspace1
+assign [class="Mattermost"] $workspace1
 assign [Class="Pidgin"] $workspace1
-assign [Class="mattermost"] $workspace1
 
 for_window [title="Cisco AnyConnect Secure Mobility Client"] floating enable 
 for_window [Class="sun-awt-X11-XFramePeer"] floating enable 
@@ -267,6 +266,7 @@ for_window [title="Blizzard App"] floating enable
 for_window [title="Bluetooth Devices"] floating enable
 for_window [class="Spotify"] floating enable 
 for_window [id="0x3000007"] floating enable # nautilus
+for_window [class="mattermost"] floating enable 
 
 bindsym Print exec scrot ~/images/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png && notify-send -t 2 "Screenshot taken" -u low
 bindsym Shift+Print exec gnome-screenshot -i -c 
