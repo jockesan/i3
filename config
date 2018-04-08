@@ -1,6 +1,6 @@
 set $mod Mod4
 
-exec --no-startup-id ~/.config/i3/script/set_wallpaper.sh 
+exec --no-startup-id wal -R 
 
 font pango:monospace 9
 
@@ -140,7 +140,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
+#exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
 
 #bar {
 	#status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
@@ -254,7 +254,7 @@ for_window [title="CTC Downloading"] floating enable
 for_window [title ="Remmina Remote Desktop Client"] floating enable 
 for_window [title="*.*- LibreOffice Calc"] floating enable 
 for_window [Class="Firefox"] floating enable
-for_window [title="Oracle VM VirtualBox Manager"] floating enable border pixel 1
+for_window [title="Oracle VM VirtualBox Manager"] floating enable border none
 for_window [Class="Gnome-terminal"] border pixel 1
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable

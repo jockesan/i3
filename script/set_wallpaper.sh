@@ -1,3 +1,2 @@
 #!/bin/bash
-
-wal -R
+wal -R 
