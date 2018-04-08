@@ -4,9 +4,10 @@ exec --no-startup-id ~/.local/bin/wal -R
 
 
 #font impact 9
-font pango:monospace 9
+#font pango:monospace 9
 #font pango:HaxorMedium-10 
-
+#font pango:fixed 9
+font pango:Cantarell 8
 floating_modifier $mod
 
 set $term --no-startup-id gnome-terminal -- fish
