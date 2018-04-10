@@ -144,7 +144,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
+#exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
 
 bar {
 	#status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
@@ -209,7 +209,7 @@ for_window [class="dump"] floating enable
 for_window [class="dump"] resize set 800 500
 for_window [class="dump"] move scratchpad
 for_Window [class="dump"] border pixel 1
-exec --no-startup-id $term --class=dump --tmux 
+exec --no-startup-id $term --class=dump 
 
 
 
