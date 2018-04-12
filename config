@@ -1,6 +1,7 @@
 set $mod Mod4
 
 exec --no-startup-id ~/.local/bin/wal -R 
+exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
 
 
 #font impact 9
@@ -144,22 +145,21 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
-#exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
 
-bar {
+#bar {
 	#status_command i3blocks -c /home/jowe01/.config/i3/conf/i3blocks.conf
-        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
-                tray_output primary
-	        colors {
-                background $bg
-                separator $fg
+#        status_command i3status -c /home/jowe01/.config/i3/conf/i3status.conf
+#                tray_output primary
+#	        colors {
+#                background $bg
+#                separator $fg
                 #                  border             background         text
-                focused_workspace  $bg                  $bg             $fg
-                inactive_workspace $bg                  $bg             $fg
-                urgent_workspace   $bg                  $bg             $fg
-        }
+#                focused_workspace  $bg                  $bg             $fg
+#                inactive_workspace $bg                  $bg             $fg
+#                urgent_workspace   $bg                  $bg             $fg
+#        }
 
-}
+#}
 
 hide_edge_borders both
 new_float pixel 1
