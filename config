@@ -164,8 +164,8 @@ bar {
 hide_edge_borders both
 new_float pixel 1
 
-gaps inner 5
-gaps outer 5
+gaps inner 10
+gaps outer 10
 bindsym $mod+minus gaps inner all minus 5
 bindsym $mod+plus gaps inner all plus 5
 bindsym Shift+$mod+minus gaps outer all minus 5
@@ -196,7 +196,7 @@ for_window [class="netshell"] floating enable
 for_window [class="netshell"] resize set 625 425
 for_window [class="netshell"] move scratchpad
 for_window [class="netshell"] border pixel 1
-exec --no-startup-id $term --class=netshell
+exec --no-startup-id gnome-terminal --class=netshell -- fish
 
 for_window [class="home"] floating enable 
 for_window [class="home"] resize set 600 400 
