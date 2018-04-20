@@ -4,19 +4,15 @@ exec --no-startup-id ~/.local/bin/wal -R
 #exec_always --no-startup-id polybar /home/jowe01/.config/i3/script/start_polybar.sh
 
 
-#font impact 9
-#font pango:monospace 9
-#font pango:HaxorMedium-10 
-#font pango:fixed 9
-font pango:Cantarell 8
+font pango:FuraCode Nerd Font 8
 floating_modifier $mod
 
 set $term --no-startup-id gnome-terminal -- fish
 bindsym $mod+Return exec $term 
 bindsym $mod+Shift+q kill
 #
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 #
 bindsym $mod+j focus left
@@ -134,7 +130,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 #
 set_from_resource $fg i3wm.color7 #81daf5
-set_from_resource $bg i3wm.color0 #0489b1
+set_from_resource $bg i3wm.color2 #0489b1
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -164,8 +160,8 @@ bar {
 hide_edge_borders both
 new_float pixel 1
 
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 bindsym $mod+minus gaps inner all minus 5
 bindsym $mod+plus gaps inner all plus 5
 bindsym Shift+$mod+minus gaps outer all minus 5
