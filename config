@@ -209,8 +209,9 @@ exec --no-startup-id gnome-terminal --class=dump  -- fish
 
 
 
-set $mode_mon Monitor Setup (h) Home, (w) Work, (o) On the go, (m) Mirror 
-mode "$mode_mon"{
+set $mode_mon Monitor Setup (a) Auto mode (h) Home, (w) Work, (o) On the go, (m) Mirror 
+mode "$mode_mon"{ # TODO: change this to one script, this is silly 
+	bindsym a exec --no-startup-id ~/.config/i3/script/mon_auto.sh, mode "default"
 	bindsym h exec --no-startup-id ~/.config/i3/script/mon_home.sh, mode "default"
 	bindsym w exec --no-startup-id ~/.config/i3/script/mon_work.sh, mode "default"
 	bindsym o exec --no-startup-id ~/.config/i3/script/mon_hipp.sh, mode "default"
