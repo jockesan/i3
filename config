@@ -7,7 +7,7 @@ exec --no-startup-id ~/.local/bin/wal -R
 font pango:FuraCode Nerd Font 8
 floating_modifier $mod
 
-set $term --no-startup-id gnome-terminal -- fish
+set $term --no-startup-id gnome-terminal 
 bindsym $mod+Return exec $term 
 bindsym $mod+Shift+q kill
 #
@@ -256,7 +256,7 @@ for_window [title ="Remmina Remote Desktop Client"] floating enable
 for_window [title="*.*- LibreOffice Calc"] floating enable 
 for_window [Class="Firefox"] floating enable
 for_window [title="Oracle VM VirtualBox Manager"] floating enable border none
-for_window [Class="Gnome-terminal"] border pixel 1
+for_window [Class="Gnome-terminal"] border none
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
