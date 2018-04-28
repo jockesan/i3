@@ -1,4 +1,5 @@
 #!/bin/bash
 killall polybar
-polybar -c ~/.config/i3/conf/new-poly.conf main &
+sleep 5
+polybar -r -c  ~/.config/i3/conf/test/work-poly.conf lappy &
 
