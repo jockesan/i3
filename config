@@ -1,7 +1,7 @@
 set $mod Mod4
 
 exec_always --no-startup-id polybar -c ~/.config/i3/script/start_polybar.sh
-exec_always --no-startup-id feh --bg-scale ~/images/desktop/coffe.png
+#exec_always --no-startup-id feh --bg-scale ~/images/desktop/coffe.png
 #font pango:ubuntu 8
 font pango:FuraCode Nerd Font 8
 
@@ -231,6 +231,7 @@ for_window [class="Spotify"] floating enable
 for_window [class="mattermost"] floating enable border none 
 for_window [class="discord"] floating enable border none
 for_window [class="Gnome-terminal"] border none
+for_window [class="VirtualBox"] border none
 #
 for_window [title="CTC Downloading"] floating enable 
 for_window [title ="Remmina Remote Desktop Client"] floating enable 
