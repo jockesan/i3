@@ -1,7 +1,7 @@
 set $mod Mod4
 
-exec_always --no-startup-id polybar -c ~/.config/i3/script/start_polybar.sh
-#exec_always --no-startup-id feh --bg-scale ~/images/desktop/coffe.png
+exec --no-startup-id ~/.local/bin/start_polybar.sh
+exec --no-startup-id feh --bg-scale ~/images/desktop/coffe.png
 #font pango:ubuntu 8
 font pango:FuraCode Nerd Font 8
 
