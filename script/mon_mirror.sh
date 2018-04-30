@@ -1,9 +1,6 @@
-OUT1=$1
-OUT2=$2
+#!/bin/bash
+OUT=$1
 
-
-#if [$OUT1 != null && $OUT2 != null ) 
-
-xrandr --output $OUT1 --same-as  $OUT2
+xrandr --output $OUT --same-as  eDP-1
 
 notify-send -t 4 "PowerPoint time!" "Monitor setup -> Mirror"
