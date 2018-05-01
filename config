@@ -1,19 +1,23 @@
+#			#
+#			#
+#     i3 config file    #
+#			#
+#			#
+
 set $mod Mod4
+
+#
 exec_always --no-startup-id wal -R
 exec_always --no-startup-id $HOME/.config/i3/script/launch.sh
 exec --no-startup-id feh --bg-scale ~/images/desktop/coffe.png
-#font pango:ubuntu 8
-font pango:FuraCode Nerd Font 8
-
+#
+font ProFont for Powerline Regular 8
+#
 floating_modifier $mod
-
+#
 set $term --no-startup-id gnome-terminal -- fish 
 bindsym $mod+Return exec $term 
 bindsym $mod+Shift+q kill
-#
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-
 #
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -43,8 +47,6 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-#bindsym $mod+a focus parent
-#bindsym $mod+d focus child
 
 set $workspace1 "1"
 set $workspace2 "2"
@@ -56,8 +58,6 @@ set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
 set $workspace10 "10"
- 
-
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -69,7 +69,6 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
-
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -106,7 +105,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
-set_from_resource $fg i3wm.color8 #81daf5
+set_from_resource $fg i3wm.color7 #81daf5
 set_from_resource $bg i3wm.color2 #0489b1
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -176,14 +175,11 @@ for_window [class="home"] move scratchpad
 for_Window [class="home"] border pixel 1
 exec --no-startup-id gnome-terminal --class=home  -- fish 
 
-
 for_window [class="dump"] floating enable
 for_window [class="dump"] resize set 800 500
 for_window [class="dump"] move scratchpad
 for_Window [class="dump"] border pixel 1
 exec --no-startup-id gnome-terminal --class=dump  -- fish
-
-
 
 set $mode_mon Monitor Setup (a) Auto mode (h) Home, (w) Work, (o) On the go, (m) Mirror 
 mode "$mode_mon"{ # TODO: change this to one script, this is silly 
@@ -229,10 +225,15 @@ for_window [Class="Firefox"] floating enable
 for_window [Class="sun-awt-X11-XFramePeer"] floating enable 
 for_window [Class="*.*  Cisco Transport Controller"] floating enable
 for_window [class="Spotify"] floating enable 
-for_window [class="mattermost"] floating enable border none 
+for_window [class="Mattermost"] border none 
+for_window [class="Pidgin"] border none
 for_window [class="discord"] floating enable border none
 for_window [class="Gnome-terminal"] border none
 for_window [class="VirtualBox"] border none
+for_window [class="Google-chrome"] border none
+for_window [class= "Spotify"] border none
+for_window [class= "Sublime-text"] border none
+
 #
 for_window [title="CTC Downloading"] floating enable 
 for_window [title ="Remmina Remote Desktop Client"] floating enable 
@@ -252,29 +253,23 @@ for_window [window_type="menu"] floating enable
 #
 for_window [id="0x3000007"] floating enable # nautilus
 #
-
 bindsym Print exec scrot ~/images/Screenshots/screenshot_%Y_%m_%d_%H_%M_%S.png && notify-send -t 2 "Screenshot taken" -u low
 bindsym Shift+Print exec gnome-screenshot -i -c 
-
 # Audio control
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
-
 # let there be light!
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 && exec ~/.config/i3/script/bright-notis.sh
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 && exec ~/.config/i3/script/bright-notis.sh
-
 # Mic control
 bindsym Shift+XF86AudioRaiseVolume exec amixer set Capture 9%+
 bindsym Shift+XF86AudioLowerVolume exec amixer set Capture 9%-
 bindsym XF86AudioMicMute exec amixer set Capture toggle
-
 # touchpad tweaks
 exec --no-startup-id synclient PalmDetect=1 
 bindsym $mod+p exec synclient TouchpadOff=0 && notify-send -t 3 "Touchpad ON!" -u normal
 bindsym Shift+$mod+p exec synclient TouchpadOff=1 && notify-send -t 3 "Touchpad OFF!" -u critical
-
 
 set $mode_move Move workspace (Left arrow) left | (Right arrow) right
 mode "$mode_move"  {
