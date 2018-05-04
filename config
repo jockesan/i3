@@ -155,7 +155,7 @@ bindsym $mod+Tab exec --no-startup-id "rofi -show window -config /home/jowe01/.c
 bindsym $mod+Shift+w exec /home/jowe01/.config/i3/script/start-work-vm.sh move to $workspace4
 exec --no-startup-id exec /home/jowe01/.config/i3/script/matter.sh  $workspace1
 exec --no-startup-id exec /home/jowe01/.config/i3/script/pidgin.sh  $workspace1
-exec --no-startup-id exec ~/.local/bin/work-vpn.sh move to $workspace10
+exec --no-startup-id exec ~/.local/bin/work-vpn.sh 
 exec --no-startup-id exec compton --config /home/jowe01/.config/i3/conf/compton.conf 
 exec --no-startup-id /home/jowe01/.config/i3/script/work-display.sh
 exec --no-startup-id dunst -config /home/jowe01/.config/i3/conf/dunst.conf
