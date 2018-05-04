@@ -141,15 +141,17 @@ bindsym $mod+minus gaps inner all minus 5
 bindsym $mod+plus gaps inner all plus 5
 bindsym Shift+$mod+minus gaps outer all minus 5
 bindsym Shift+$mod+plus gaps outer all plus 5 
-
+#
 bindsym $mod+Ctrl+l exec "~/.config/i3/script/xscreen-lock.sh"
+#
 bindsym $mod+u [class="netshell"] scratchpad show 
 bindsym $mod+Shift+d [class="dump"] scratchpad show
 bindsym $mod+a [class="home"] scratchpad show
-
+bindsym $mod+Shift+s [class="vpnui"] scratchpad show
+#
 bindsym $mod+d exec --no-startup-id "rofi -show run -config /home/jowe01/.config/i3/conf/rofi.conf" 
 bindsym $mod+Tab exec --no-startup-id "rofi -show window -config /home/jowe01/.config/i3/conf/rofi.conf"
-
+#
 bindsym $mod+Shift+w exec /home/jowe01/.config/i3/script/start-work-vm.sh move to $workspace4
 exec --no-startup-id exec /home/jowe01/.config/i3/script/matter.sh  $workspace1
 exec --no-startup-id exec /home/jowe01/.config/i3/script/pidgin.sh  $workspace1
@@ -180,6 +182,13 @@ for_window [class="dump"] resize set 800 500
 for_window [class="dump"] move scratchpad
 for_Window [class="dump"] border pixel 1
 exec --no-startup-id gnome-terminal --class=dump  -- fish
+
+for_window [class="vpnui"] floating enable
+for_window [class="vpnui"] resize set 800 500
+for_window [class="vpnui"] move scratchpad
+for_Window [class="vpnui"] border pixel 1
+
+
 
 set $mode_mon Monitor Setup (a) Auto mode (h) Home, (w) Work, (o) On the go, (m) Mirror 
 mode "$mode_mon"{ # TODO: change this to one script, this is silly 
