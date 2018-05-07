@@ -215,7 +215,6 @@ mode "$mode_system" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    
 }
 
 bindsym $mod+Delete mode "$mode_system"
@@ -242,7 +241,6 @@ for_window [class="VirtualBox"] border none
 for_window [class="Google-chrome"] border none
 for_window [class= "Spotify"] border none
 for_window [class= "Sublime-text"] border none
-
 #
 for_window [title="CTC Downloading"] floating enable 
 for_window [title ="Remmina Remote Desktop Client"] floating enable 
