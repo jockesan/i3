@@ -1,0 +1,65 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "none",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 442,
+       "width": 810,
+       "x": 19,
+       "y": 19
+    },
+    "name": "bb-alerts - Com Hem Com Hem Mattermost",
+    "percent": 1,
+    "swallows": [
+       {
+       // "class": "^Mattermost$",
+       // "instance": "^mattermost$",
+       // "title": "^bb\\-alerts\\ \\-\\ Com\\ Hem\\ Com\\ Hem\\ Mattermost$",
+       // "transient_for": "^$",
+       // "window_role": "^browser\\-window$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // floating_con with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 396,
+       "width": 1012,
+       "x": 678,
+       "y": 129
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "user_on",
+            "geometry": {
+               "height": 338,
+               "width": 562,
+               "x": 0,
+               "y": 0
+            },
+            "name": "~",
+            "percent": 1,
+            "swallows": [
+               {
+               // "class": "^home$",
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^\\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-ded74644\\-e06d\\-4e7b\\-8860\\-72b78c244873$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
